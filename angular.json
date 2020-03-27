@@ -1,0 +1,172 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1, 
+  "cli": {
+    "packageManager": "yarn"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-logger-demo": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ngx-logger-demo",
+      "sourceRoot": "projects/ngx-logger-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-logger-demo",
+            "index": "projects/ngx-logger-demo/src/index.html",
+            "main": "projects/ngx-logger-demo/src/main.ts",
+            "polyfills": "projects/ngx-logger-demo/src/polyfills.ts",
+            "tsConfig": "projects/ngx-logger-demo/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ngx-logger-demo/src/favicon.ico",
+              "projects/ngx-logger-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-logger-demo/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-logger-demo/src/environments/environment.ts",
+                  "with": "projects/ngx-logger-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-logger-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-logger-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-logger-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-logger-demo/src/test.ts",
+            "polyfills": "projects/ngx-logger-demo/src/polyfills.ts",
+            "tsConfig": "projects/ngx-logger-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-logger-demo/karma.conf.js",
+            "assets": [
+              "projects/ngx-logger-demo/src/favicon.ico",
+              "projects/ngx-logger-demo/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-logger-demo/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-logger-demo/tsconfig.app.json",
+              "projects/ngx-logger-demo/tsconfig.spec.json",
+              "projects/ngx-logger-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ngx-logger-demo/e2e/protractor.conf.js",
+            "devServerTarget": "ngx-logger-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-logger-demo:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "@macto/ngx-simple-logger": {
+      "projectType": "library",
+      "root": "projects/macto/ngx-simple-logger",
+      "sourceRoot": "projects/macto/ngx-simple-logger/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/macto/ngx-simple-logger/tsconfig.lib.json",
+            "project": "projects/macto/ngx-simple-logger/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/macto/ngx-simple-logger/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/macto/ngx-simple-logger/src/test.ts",
+            "tsConfig": "projects/macto/ngx-simple-logger/tsconfig.spec.json",
+            "karmaConfig": "projects/macto/ngx-simple-logger/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/macto/ngx-simple-logger/tsconfig.lib.json",
+              "projects/macto/ngx-simple-logger/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-logger-demo"
+}
