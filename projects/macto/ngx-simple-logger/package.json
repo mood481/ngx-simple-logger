@@ -1,6 +1,23 @@
 {
   "name": "@macto/ngx-simple-logger",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha",
+  "description": "",
+  "author": "JD Cáceres Tapia <jdct@macto.es>",
+  "contributors": [
+    "Rosendo Chas Patier <rosendo@tendenciascentrifugas.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tendcent/ngx-simple-logger"
+  },
+  "homepage": "https://github.com/tendcent/ngx-simple-logger",
+  "keywords": [
+    "angular",
+    "javascript",
+    "logging",
+    "logger"
+  ],
+  "license": "Apache-2.0",
   "peerDependencies": {
     "@angular/common": "^9.1.0",
     "@angular/core": "^9.1.0",

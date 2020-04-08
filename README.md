@@ -1,1 +1,1 @@
-Simple logger for Angular apps -- work in progress
+Simple logger for Angular apps

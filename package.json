@@ -1,6 +1,6 @@
 {
-  "name": "ngx-simple-logger",
-  "version": "0.1.0",
+  "name": "ngx-simple-logger-base",
+  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.0",
     "@angular/common": "~9.1.0",

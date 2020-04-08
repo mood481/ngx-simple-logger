@@ -1,1 +1,1 @@
-Simple logger for Angular (work in progress)
+Simple logger for Angular apps
