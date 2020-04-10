@@ -1,0 +1,23 @@
+name: "npm publish"
+
+on:
+  push:
+    branches:
+      - staging
+  pull_request:
+    branches:
+      - staging
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.0.0
+      - uses: actions/setup-node@v1.4.1
+        with:
+          node-version: 10
+      - run: yarn install
+      - run: yarn build:lib-prod
+      - run: yarn publish dist/macto/ngx-simple-logger --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
