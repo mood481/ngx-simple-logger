@@ -1,10 +1,10 @@
-import {LoggerConfig, LoggerPublisher, SimpleLogLevel} from "./types";
+import {LoggerConfig} from "./types";
 
 
-export class LoggerConfigWrapper 
+export class LoggerConfigWrapper
 {
     public constructor(private config: LoggerConfig) {
-        
+        //
     }
 
     update(config: LoggerConfig) {

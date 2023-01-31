@@ -2,8 +2,7 @@ import {CommonModule, DatePipe} from "@angular/common";
 import {ModuleWithProviders, NgModule} from "@angular/core";
 
 import {SimpleLoggerService} from "./ngx-simple-logger.service";
-import {LoggerConfig} from "./types"
-
+import {LoggerConfig} from "./types";
 
 
 @NgModule({
@@ -15,9 +14,9 @@ import {LoggerConfig} from "./types"
         DatePipe
     ]
 })
-export class SimpleLoggerModule 
+export class SimpleLoggerModule
 {
-    static forRoot(config: LoggerConfig | null | undefined): ModuleWithProviders {
+    static forRoot(config: LoggerConfig | null | undefined): ModuleWithProviders<SimpleLoggerModule> {
         return {
             ngModule: SimpleLoggerModule,
             providers: [
@@ -26,7 +25,7 @@ export class SimpleLoggerModule
             ]
         };
     }
-    static forChild(): ModuleWithProviders {
+    static forChild(): ModuleWithProviders<SimpleLoggerModule> {
         return {
             ngModule: SimpleLoggerModule,
             providers: [
