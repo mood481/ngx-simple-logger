@@ -1,7 +1,7 @@
 import {LogRecord} from "./log-record";
 import {Observable} from "rxjs";
 
-export enum SimpleLogLevel 
+export enum SimpleLogLevel
 {
     NONE = 0,
     DEBUG,
@@ -11,7 +11,7 @@ export enum SimpleLogLevel
     CRITICAL
 }
 
-export interface LoggerPublisher 
+export interface LoggerPublisher
 {
     location?: string;
     level?: SimpleLogLevel;
@@ -19,7 +19,7 @@ export interface LoggerPublisher
     clear(): Observable<boolean>;
 }
 
-export class LoggerConfig 
+export class LoggerConfig
 {
     public customPublishers?: Array<LoggerPublisher>;
     public isConsoleDisabled?: boolean;

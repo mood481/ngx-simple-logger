@@ -1,13 +1,12 @@
 import {SimpleLogLevel} from "../types";
 
-
 export class LoggerConsoleUtils
 {
     public static getStyleByLevel(level: SimpleLogLevel): string {
         let ret = "color:";
         switch (level) {
             case SimpleLogLevel.DEBUG:
-            case SimpleLogLevel.INFO: 
+            case SimpleLogLevel.INFO:
                 ret += "green";
                 break;
             case SimpleLogLevel.WARNING:
@@ -20,7 +19,7 @@ export class LoggerConsoleUtils
             default:
                 ret = "font-style:italic";
         }
-        
+
         return ret;
     }
 }
