@@ -16,6 +16,7 @@
 .history/*
 
 # misc
+/.angular/cache
 npm-debug.log
 yarn-error.log
 
