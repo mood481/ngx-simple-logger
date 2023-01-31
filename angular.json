@@ -1,8 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "cli": {
-    "packageManager": "yarn"
+    "packageManager": "yarn",
+    "defaultCollection": "@angular-eslint/schematics"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -116,6 +117,15 @@
               "devServerTarget": "ngx-logger-demo:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-logger-demo/src/**/*.ts",
+              "projects/ngx-logger-demo/src/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -143,6 +153,15 @@
             "main": "projects/macto/ngx-simple-logger/src/test.ts",
             "tsConfig": "projects/macto/ngx-simple-logger/tsconfig.spec.json",
             "karmaConfig": "projects/macto/ngx-simple-logger/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/macto/ngx-simple-logger/src/**/*.ts",
+              "projects/macto/ngx-simple-logger/src/**/*.html"
+            ]
           }
         }
       }

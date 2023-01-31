@@ -34,7 +34,7 @@ export class LoggerConsole implements LoggerPublisher
                 console.warn(`%c${entry.messagePrefix}`, style, entry.message, ...entry.extraRaw);
                 break;
             case SimpleLogLevel.INFO:
-                // tslint:disable-next-line:no-console
+                // eslint-disable-next-line no-console
                 console.info(`%c${entry.messagePrefix}`, style, entry.message, ...entry.extraRaw);
                 break;
             default:
