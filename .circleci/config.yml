@@ -1,0 +1,22 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.1.0
+
+jobs:
+  prepare-and-test:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - node/install:
+          node-version: '14.19'
+          install-yarn: true
+          yarn-version: '1'
+      - node/install-packages:
+          pkg-manager: yarn
+      - run: yarn test
+workflows:
+  test:
+    jobs:
+      - prepare-and-test
