@@ -5,7 +5,7 @@ orbs:
   browser-tools: circleci/browser-tools@1.4.1
 
 jobs:
-  prepare-and-test:
+  lint-and-test:
     docker:
       - image: 'cimg/node:14.19-browsers'
     steps:
@@ -18,11 +18,15 @@ jobs:
           yarn-version: '1.22.19'
       - node/install-packages:
           pkg-manager: yarn
-      - run: yarn test
+      - run:
+          command: |
+            yarn lint
+            yarn test
+          name: Check install
 workflows:
   test:
     jobs:
-      - prepare-and-test:
+      - lint-and-test:
         filters:
           branches:
             only: develop

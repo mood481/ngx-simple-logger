@@ -8,8 +8,7 @@
       "parserOptions": {
         "project": [
           "./projects/ngx-logger-demo/tsconfig.app.json",
-          "./projects/ngx-logger-demo/tsconfig.spec.json",
-          "./projects/ngx-logger-demo/e2e/tsconfig.json"
+          "./projects/ngx-logger-demo/tsconfig.spec.json"
         ],
         "createDefaultProgram": true
       },

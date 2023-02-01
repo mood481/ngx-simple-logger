@@ -108,18 +108,6 @@
             "scripts": []
           }
         },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/ngx-logger-demo/e2e/protractor.conf.js",
-            "devServerTarget": "ngx-logger-demo:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ngx-logger-demo:serve:production"
-            }
-          }
-        },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
@@ -147,14 +135,6 @@
             "production": {
               "tsConfig": "projects/macto/ngx-simple-logger/tsconfig.lib.prod.json"
             }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/macto/ngx-simple-logger/src/test.ts",
-            "tsConfig": "projects/macto/ngx-simple-logger/tsconfig.spec.json",
-            "karmaConfig": "projects/macto/ngx-simple-logger/karma.conf.js"
           }
         },
         "lint": {
