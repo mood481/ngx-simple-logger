@@ -1,5 +1,6 @@
 import { TestBed, waitForAsync } from "@angular/core/testing";
 import { AppComponent } from "./app.component";
+import { SimpleLoggerModule, SimpleLoggerService, SimpleLogLevel } from "@macto/ngx-simple-logger";
 
 describe("AppComponent", () => {
   beforeEach(waitForAsync(() => {
@@ -7,6 +8,8 @@ describe("AppComponent", () => {
       declarations: [
         AppComponent
       ],
+      imports: [ SimpleLoggerModule.forRoot({ level: SimpleLogLevel.DEBUG }) ],
+      providers: [ SimpleLoggerService ]
     }).compileComponents();
   }));
 
@@ -26,6 +29,6 @@ describe("AppComponent", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector(".content span").textContent).toContain("ngx-logger-demo app is running!");
+    expect(compiled.querySelector(".content p").textContent).toContain("ngx-logger-demo is running");
   });
 });
