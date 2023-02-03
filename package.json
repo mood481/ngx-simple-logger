@@ -6,8 +6,7 @@
     "start": "ng serve",
     "test": "ng test",
     "lint": "ng lint",
-    "build:lib": "ng build @macto/ngx-simple-logger",
-    "build:lib-prod": "ng build @macto/ngx-simple-logger --configuration production"
+    "build": "ng build @macto/ngx-simple-logger --configuration production"
   },
   "dependencies": {
     "@angular/animations": "^14.2.12",
