@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable} from "@angular/core";
 
 import {LoggerConfigWrapper} from "./logger-config.wrapper";
 import {LoggerConfig, LoggerPublisher, SimpleLogLevel} from "./types";
@@ -48,7 +48,7 @@ export class SimpleLoggerService
             this.publishers.push(new LoggerConsole(config.level));
         }
         if (config.customPublishers) {
-            this.publishers = this.publishers.concat(config.customPublishers)
+            this.publishers = this.publishers.concat(config.customPublishers);
         }
     }
 
