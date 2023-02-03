@@ -23,6 +23,18 @@ jobs:
             yarn lint
             yarn test
           name: linting and testing
+  build:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - checkout
+      - node/install:
+          node-version: '14.19'
+          install-yarn: true
+          yarn-version: '1.22.19'
+      - node/install-packages:
+          pkg-manager: yarn
+      - run: yarn build
 workflows:
   test:
     when:
@@ -31,3 +43,8 @@ workflows:
         value: << pipeline.git.branch >>
     jobs:
       - lint-and-test
+  build-lib:
+    when:
+      equal: [ staging, << pipeline.git.branch >> ]
+    jobs:
+      - build
