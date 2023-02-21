@@ -1,16 +1,16 @@
 {
   "name": "@macto/ngx-simple-logger",
-  "version": "0.1.0-alpha",
+  "version": "0.1.1",
   "description": "",
-  "author": "JD Cáceres Tapia <jdct@macto.es>",
+  "author": "JD Cáceres Tapia <josedavid@mood481.es>",
   "contributors": [
-    "Rosendo Chas Patier <rosendo@tendenciascentrifugas.com>"
+    "Rosendo Chas Patier <rosendo@mood481.es>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/tendcent/ngx-simple-logger"
+    "url": "https://github.com/mood481/ngx-simple-logger"
   },
-  "homepage": "https://github.com/tendcent/ngx-simple-logger",
+  "homepage": "https://github.com/mood481/ngx-simple-logger",
   "keywords": [
     "angular",
     "javascript",
@@ -22,7 +22,7 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "^9.1.0",
-    "@angular/core": "^9.1.0"
+    "@angular/common": ">= 12.0.0 < 15.0.0",
+    "@angular/core": ">= 12.0.0 < 15.0.0"
   }
 }
